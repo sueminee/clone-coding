@@ -18,6 +18,7 @@ import useCounter from '../hooks/useCounter';
 // }: CounterProps) {
 function Counter() {
   const { count, onIncrease, onDecrease, onIncreaseBy } = useCounter();
+  console.log('test');
   // 이렇게 하면, 필요한 함수와 값을 props로 받아오는게 아니라,
   // "useCounter" Hook을 통해서 받아왔다. 
   return(
