@@ -9,5 +9,3 @@ export default function useAddTodo() {
   const dispatch = useDispatch();
   return useCallback(text => dispatch(addTodo(text)), [dispatch]);
 }
-
-//TODO: 여기 이해안됨.

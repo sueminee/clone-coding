@@ -9,7 +9,6 @@ function TodoInsert() {
 
   const [value, setValue] = useState('');
   const addTodo = useAddTodo();
-  // TODO: 이거 이해안됨.
   console.log('value', value, 'addTodo', addTodo);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
