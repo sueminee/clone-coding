@@ -5,22 +5,25 @@
 import React from 'react';
 import './TodoItem.css';
 import { Todo } from '../modules/todos'; // 타입
+import useTodoActions from '../hooks/useTodoAction';
 
 // TODO: 
 // console.log("import { Todo } from '../modules/todos'로 불러온 Todo 너의 정체가 모ㄴㅑ", Todo);
 //'Todo' only refers to a type, but is being used as a value here.
 
 
-type TodoItemProps = {
+export type TodoItemProps = {
   todo: Todo;
 }
 
 function TodoItem({ todo } : TodoItemProps) {
   // TODO: 커스텀 hook을 사용해서, onToggle / onRemove  구현하기
+  const { onToggle, onRemove } = useTodoActions(todo.id);
+
   return(
     <li className={`TodoItem ${todo.done ? 'done' : ''}`}>
-      <span className="text">{todo.text}</span>
-      <span className="remove">( X )</span>
+      <span className="text" onClick={onToggle}>{todo.text}</span>
+      <span className="remove" onClick={onRemove}>( X )</span>
     </li>
   )
 }
